@@ -4,21 +4,20 @@ html, body
 {
   height: 100%;
   width: 100%;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 #hex
 {
-  color: black;
-  font: 180px/180px Lato;
-  font-size: 180px;
-  position: absolute;
-  top:0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 200px;
-  height: 200px;
+  color: white;
+  font: 120px/120px Lato;
+  font-size: 120px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  width: 840px;
+  height: 120px;
   text-align: center;
 }
