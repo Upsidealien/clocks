@@ -1,0 +1,26 @@
+html, body
+{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#pie
+{
+  color: white;
+  font: 120px/120px Lato;
+  font-size: 120px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  text-align: center;
+}
+
+path {
+      stroke: #000;                               /* NEW */
+      stroke-width: 2;                            /* NEW */
+    }
