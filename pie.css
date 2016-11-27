@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
 html, body
 {
   height: 100%;
@@ -8,23 +10,35 @@ html, body
 #pie
 {
   color: white;
-  font: 120px/120px Lato;
-  font-size: 120px;
+  /*font: 10px/10px Lato;
+  font-size: 10px;*/
   position: fixed;
   top: 50%;
   left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
   width: 200px;
-  height: 200px;
+  height: 260px;
   text-align: center;
+}
+
+p {
+  color: black;
+  font-family: 'Bungee Inline', cursive;
+  height:10px;
+  font:10px;
+  padding-bottom: 10px;
 }
 
 div div {
     width: 100px;
-    height: 100px;
-    outline: 1px solid;
+    height: 120px;
     float: left;
+}
+
+div div div {
+  height:100px;
+  width:100px;
 }
 
 path {

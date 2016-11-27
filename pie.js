@@ -61,7 +61,7 @@ function update() {
   millisecondsData = [milli, 1000 - milli];
   secondsData = [s, 60-s];
   minutesData = [m, 60-m];
-  hoursData = [h, 24-h];
+  hoursData = [h%12, (24-h)%12];
 
   render(hoursData, hoursPie);
   render(minutesData, minutesPie);
