@@ -1,10 +1,4 @@
-d = new Date();
-h = d.getHours();
-m = d.getMinutes();
-s = d.getSeconds();
-milli = d.getMilliseconds();
 
-var dataset = [s, 60-s];
 
 var width = 100,
 height = 100,
@@ -12,7 +6,25 @@ radius = Math.min(width, height) / 2;
 
 var color = ['#000000', '#FFFFFF'];
 
-var secondsPie = d3.select("#pie").append("svg")
+var hoursPie = d3.select("#hours").append("svg")
+.attr("width", width)
+.attr("height", height)
+.append("g")
+.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var minutesPie = d3.select("#minutes").append("svg")
+.attr("width", width)
+.attr("height", height)
+.append("g")
+.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var secondsPie = d3.select("#seconds").append("svg")
+.attr("width", width)
+.attr("height", height)
+.append("g")
+.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var millisecondsPie = d3.select("#milliseconds").append("svg")
 .attr("width", width)
 .attr("height", height)
 .append("g")
@@ -23,8 +35,8 @@ function render(data, svg) {
       .sort(null);
 
     var arc = d3.arc()
-      .innerRadius(radius - 100)
-      .outerRadius(radius - 50);
+      .innerRadius(radius - 40)
+      .outerRadius(radius - 5);
 
     var path = svg.selectAll("path")
       .data(pie(data));
@@ -36,18 +48,23 @@ function render(data, svg) {
     var pathUpdate = path.attr("d", arc);
 }
 
-render(dataset, secondsPie);
-
-setInterval(function(){
 update();
-}, 1000);
+setInterval(function(){ update();}, 1);
 
 function update() {
   d = new Date();
   h = d.getHours();
   m = d.getMinutes();
   s = d.getSeconds();
+  milli = d.getMilliseconds();
 
-  dataset = [s, 60-s];
-  render(dataset, secondsPie);
+  millisecondsData = [milli, 1000 - milli];
+  secondsData = [s, 60-s];
+  minutesData = [m, 60-m];
+  hoursData = [h, 24-h];
+
+  render(hoursData, hoursPie);
+  render(minutesData, minutesPie);
+  render(secondsData, secondsPie);
+  render(millisecondsData, millisecondsPie);
 }
