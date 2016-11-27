@@ -15,12 +15,19 @@ html, body
   left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
-  width: 500px;
-  height: 500px;
+  width: 200px;
+  height: 200px;
   text-align: center;
 }
 
+div div {
+    width: 100px;
+    height: 100px;
+    outline: 1px solid;
+    float: left;
+}
+
 path {
-      stroke: #000;                               /* NEW */
-      stroke-width: 2;                            /* NEW */
-    }
+  stroke: #000;                               /* NEW */
+  stroke-width: 2;                            /* NEW */
+}
