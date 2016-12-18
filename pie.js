@@ -6,6 +6,8 @@ radius = Math.min(width, height) / 2;
 
 var color = ['#000000', '#FFFFFF'];
 
+
+
 var hoursPie = d3.select("#hours").append("svg")
 .attr("width", width)
 .attr("height", height)
